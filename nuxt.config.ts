@@ -1,6 +1,6 @@
 export default defineNuxtConfig({
   app: {
-    baseURL: '/',
+    baseURL: '/me',
     buildAssetsDir: 'assets'
   }
 })
