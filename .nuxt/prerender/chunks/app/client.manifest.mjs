@@ -53,7 +53,7 @@ const client_manifest = {
     "resourceType": "script",
     "module": true,
     "dynamicImports": [
-      "virtual:nuxt:/home/tjubroco/Code/LAB/Git/my-git-pages/.nuxt/error-component.mjs"
+      "virtual:nuxt:/home/tjubroco/Code/LAB/Git/me/.nuxt/error-component.mjs"
     ],
     "file": "entry.e968c021.js",
     "isEntry": true,
@@ -79,7 +79,7 @@ const client_manifest = {
     "isDynamicEntry": true,
     "src": "pages/index.vue"
   },
-  "virtual:nuxt:/home/tjubroco/Code/LAB/Git/my-git-pages/.nuxt/error-component.mjs": {
+  "virtual:nuxt:/home/tjubroco/Code/LAB/Git/me/.nuxt/error-component.mjs": {
     "resourceType": "script",
     "module": true,
     "dynamicImports": [
@@ -91,7 +91,7 @@ const client_manifest = {
       "node_modules/nuxt/dist/app/entry.mjs"
     ],
     "isDynamicEntry": true,
-    "src": "virtual:nuxt:/home/tjubroco/Code/LAB/Git/my-git-pages/.nuxt/error-component.mjs"
+    "src": "virtual:nuxt:/home/tjubroco/Code/LAB/Git/me/.nuxt/error-component.mjs"
   }
 };
 

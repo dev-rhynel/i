@@ -1,5 +1,5 @@
-import destr from 'file:///home/tjubroco/Code/LAB/Git/my-git-pages/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file:///home/tjubroco/Code/LAB/Git/my-git-pages/node_modules/scule/dist/index.mjs';
+import destr from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/destr/dist/index.mjs';
+import { snakeCase } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/scule/dist/index.mjs';
 
 const _runtimeConfig = {"app":{"baseURL":"/","buildAssetsDir":"assets","cdnURL":""},"nitro":{"envPrefix":"NUXT_","routeRules":{"/__nuxt_error":{"cache":false}}},"public":{}};
 const ENV_PREFIX = "NITRO_";
