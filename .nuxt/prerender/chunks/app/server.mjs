@@ -1,18 +1,18 @@
-import { getCurrentInstance, version, defineComponent, h, inject, computed, unref, Suspense, nextTick, Transition, provide, reactive, ref, resolveComponent, shallowRef, isReadonly, useSSRContext, createApp, toRef, isRef, defineAsyncComponent, onErrorCaptured, onServerPrefetch, withCtx, createVNode } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/vue/index.mjs';
-import { $fetch } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/ofetch/dist/node.mjs';
-import { createHooks } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/hookable/dist/index.mjs';
-import { getContext, executeAsync } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/unctx/dist/index.mjs';
-import { hasProtocol, isEqual, parseURL, joinURL } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/ufo/dist/index.mjs';
-import { createError as createError$1, sendRedirect } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/h3/dist/index.mjs';
-import { useHead, createHead as createHead$1 } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/@unhead/vue/dist/index.mjs';
-import { renderDOMHead, debouncedRenderDOMHead } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/@unhead/dom/dist/index.mjs';
-import { renderSSRHead } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/@unhead/ssr/dist/index.mjs';
-import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/vue-router/dist/vue-router.node.mjs';
-import { ssrRenderSuspense, ssrRenderComponent } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/vue/server-renderer/index.mjs';
-import { defu } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/defu/dist/defu.mjs';
+import { getCurrentInstance, version, defineComponent, h, inject, computed, unref, Suspense, nextTick, Transition, provide, reactive, ref, resolveComponent, shallowRef, isReadonly, useSSRContext, createApp, toRef, isRef, defineAsyncComponent, onErrorCaptured, onServerPrefetch, withCtx, createVNode } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/vue/index.mjs';
+import { $fetch } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/ofetch/dist/node.mjs';
+import { createHooks } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/hookable/dist/index.mjs';
+import { getContext, executeAsync } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/unctx/dist/index.mjs';
+import { hasProtocol, isEqual, parseURL, joinURL } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/ufo/dist/index.mjs';
+import { createError as createError$1, sendRedirect } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/h3/dist/index.mjs';
+import { useHead, createHead as createHead$1 } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/@unhead/vue/dist/index.mjs';
+import { renderDOMHead, debouncedRenderDOMHead } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/@unhead/dom/dist/index.mjs';
+import { renderSSRHead } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/@unhead/ssr/dist/index.mjs';
+import { useRoute as useRoute$1, RouterView, createMemoryHistory, createRouter } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/vue-router/dist/vue-router.node.mjs';
+import { ssrRenderSuspense, ssrRenderComponent } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/vue/server-renderer/index.mjs';
+import { defu } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/defu/dist/defu.mjs';
 import { u as useRuntimeConfig$1 } from '../nitro/config.mjs';
-import 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/destr/dist/index.mjs';
-import 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/scule/dist/index.mjs';
+import 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/destr/dist/index.mjs';
+import 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/scule/dist/index.mjs';
 
 const appConfig = useRuntimeConfig$1().app;
 const baseURL = () => appConfig.baseURL;
@@ -476,11 +476,24 @@ function defineNuxtLink(options) {
   });
 }
 const __nuxt_component_0$1 = defineNuxtLink({ componentName: "NuxtLink" });
-function isObject(value) {
-  return value !== null && typeof value === "object";
+function isPlainObject(value) {
+  if (value === null || typeof value !== "object") {
+    return false;
+  }
+  const prototype = Object.getPrototypeOf(value);
+  if (prototype !== null && prototype !== Object.prototype && Object.getPrototypeOf(prototype) !== null) {
+    return false;
+  }
+  if (Symbol.iterator in value) {
+    return false;
+  }
+  if (Symbol.toStringTag in value) {
+    return Object.prototype.toString.call(value) === "[object Module]";
+  }
+  return true;
 }
 function _defu(baseObject, defaults, namespace = ".", merger) {
-  if (!isObject(defaults)) {
+  if (!isPlainObject(defaults)) {
     return _defu(baseObject, {}, namespace, merger);
   }
   const object = Object.assign({}, defaults);
@@ -497,7 +510,7 @@ function _defu(baseObject, defaults, namespace = ".", merger) {
     }
     if (Array.isArray(value) && Array.isArray(object[key])) {
       object[key] = [...value, ...object[key]];
-    } else if (isObject(value) && isObject(object[key])) {
+    } else if (isPlainObject(value) && isPlainObject(object[key])) {
       object[key] = _defu(
         value,
         object[key],
@@ -517,7 +530,7 @@ function createDefu(merger) {
   );
 }
 const defuFn = createDefu((object, key, currentValue) => {
-  if (typeof object[key] !== "undefined" && typeof currentValue === "function") {
+  if (object[key] !== void 0 && typeof currentValue === "function") {
     object[key] = currentValue(object[key]);
     return true;
   }
@@ -531,7 +544,7 @@ const components_plugin_KR1HBZs4kY = defineNuxtPlugin((nuxtApp) => {
     nuxtApp.vueApp.component("Lazy" + name, components[name]);
   }
 });
-const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [], "style": [], "script": [], "noscript": [] };
+const appHead = { "meta": [{ "name": "viewport", "content": "width=device-width, initial-scale=1" }, { "charset": "utf-8" }], "link": [{ "rel": "icon", "type": "image/x-icon", "href": "/favicon.webp" }], "style": [], "script": [], "noscript": [] };
 const appLayoutTransition = false;
 const appPageTransition = false;
 const appKeepalive = false;
@@ -552,18 +565,8 @@ const vueuse_head_plugin_D7WGfuP1A0 = defineNuxtPlugin((nuxtApp) => {
     };
   }
 });
-const __nuxt_page_meta$1 = {};
 const __nuxt_page_meta = {};
 const _routes = [
-  {
-    name: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.name) ?? "about",
-    path: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.path) ?? "/about",
-    children: [],
-    meta: __nuxt_page_meta$1,
-    alias: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.alias) || [],
-    redirect: (__nuxt_page_meta$1 == null ? void 0 : __nuxt_page_meta$1.redirect) || void 0,
-    component: () => import('./assets/about-7a55ad60.mjs').then((m) => m.default || m)
-  },
   {
     name: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.name) ?? "index",
     path: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.path) ?? "/",
@@ -571,7 +574,7 @@ const _routes = [
     meta: __nuxt_page_meta,
     alias: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.alias) || [],
     redirect: (__nuxt_page_meta == null ? void 0 : __nuxt_page_meta.redirect) || void 0,
-    component: () => import('./assets/index-40d0989f.mjs').then((m) => m.default || m)
+    component: () => import('./assets/index-1c48d07a.mjs').then((m) => m.default || m)
   }
 ];
 const routerOptions0 = {
@@ -972,7 +975,7 @@ const _sfc_main = {
   __name: "nuxt-root",
   __ssrInlineRender: true,
   setup(__props) {
-    const ErrorComponent = defineAsyncComponent(() => import('./assets/error-component-ccab1b3c.mjs').then((r) => r.default || r));
+    const ErrorComponent = defineAsyncComponent(() => import('./assets/error-component-ceca9bc9.mjs').then((r) => r.default || r));
     const IslandRendererer = defineAsyncComponent(() => import('./assets/island-renderer-fa516072.mjs').then((r) => r.default || r));
     const nuxtApp = useNuxtApp();
     nuxtApp.deferHydration();

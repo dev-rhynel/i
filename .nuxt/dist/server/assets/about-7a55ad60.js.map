@@ -1,1 +1,0 @@
-{"version":3,"file":"about-7a55ad60.js","sources":["../../../../pages/about.vue"],"sourcesContent":["<template>\n  <main>\n    <div>\n      <h1>About</h1>\n      <NuxtLink to=\"/\">Home</NuxtLink>\n    </div>\n  </main>\n</template>"],"names":["_ssrRenderAttrs"],"mappings":";;;;;;;;;;;;;;;;;;AAIgB,QAAA,QAAAA,eAAA,MAAA,uBAAA;;;;;;;;;;;;;;;;;;;;;;"}

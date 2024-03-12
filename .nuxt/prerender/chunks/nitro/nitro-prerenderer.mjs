@@ -1,18 +1,18 @@
-import 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/node-fetch-native/dist/polyfill.mjs';
-import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/h3/dist/index.mjs';
-import { createFetch as createFetch$1, Headers } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/ofetch/dist/node.mjs';
-import destr from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/destr/dist/index.mjs';
-import { createCall, createFetch } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/hookable/dist/index.mjs';
+import 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/node-fetch-native/dist/polyfill.mjs';
+import { eventHandler, setHeaders, sendRedirect, defineEventHandler, handleCacheHeaders, createEvent, getRequestHeader, getRequestHeaders, setResponseHeader, createApp, createRouter as createRouter$1, lazyEventHandler, toNodeListener } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/h3/dist/index.mjs';
+import { createFetch as createFetch$1, Headers } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/ofetch/dist/node.mjs';
+import destr from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/destr/dist/index.mjs';
+import { createCall, createFetch } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/hookable/dist/index.mjs';
 import { u as useRuntimeConfig } from './config.mjs';
-import { hash } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/ohash/dist/index.mjs';
-import { withoutBase, parseURL, withQuery, joinURL } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/ufo/dist/index.mjs';
-import { createStorage } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/unstorage/dist/drivers/fs.mjs';
-import defu from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/defu/dist/defu.mjs';
-import { toRouteMatcher, createRouter } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/radix3/dist/index.mjs';
+import { hash } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/ohash/dist/index.mjs';
+import { withoutBase, parseURL, withQuery, joinURL } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/ufo/dist/index.mjs';
+import { createStorage } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/unstorage/dist/drivers/fs.mjs';
+import defu from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/defu/dist/defu.mjs';
+import { toRouteMatcher, createRouter } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/radix3/dist/index.mjs';
 
-const serverAssets = [{"baseName":"server","dir":"/home/tjubroco/Code/LAB/Git/me/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"/home/tjubroco/Documents/Personal/My Site/i/server/assets"}];
 
 const assets = createStorage();
 
@@ -26,10 +26,10 @@ const useStorage = () => storage;
 
 storage.mount('/assets', assets);
 
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Code/LAB/Git/me","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Code/LAB/Git/me/server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Code/LAB/Git/me/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Code/LAB/Git/me/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Documents/Personal/My Site/i","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Documents/Personal/My Site/i/server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Documents/Personal/My Site/i/.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","base":"/home/tjubroco/Documents/Personal/My Site/i/.nuxt/cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 const config = useRuntimeConfig();
 const _routeRulesMatcher = toRouteMatcher(
@@ -381,10 +381,10 @@ const errorHandler = (async function errorhandler(error, event) {
   event.node.res.end(await res.text());
 });
 
-const _lazy_LECvDS = () => import('../renderer.mjs');
+const _lazy_ihSWca = () => import('../renderer.mjs');
 
 const handlers = [
-  { route: '/**', handler: _lazy_LECvDS, lazy: true, middleware: false, method: undefined }
+  { route: '/**', handler: _lazy_ihSWca, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {

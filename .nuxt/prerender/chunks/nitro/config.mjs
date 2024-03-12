@@ -1,7 +1,7 @@
-import destr from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/destr/dist/index.mjs';
-import { snakeCase } from 'file:///home/tjubroco/Code/LAB/Git/me/node_modules/scule/dist/index.mjs';
+import destr from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/destr/dist/index.mjs';
+import { snakeCase } from 'file:///home/tjubroco/Documents/Personal/My%20Site/i/node_modules/scule/dist/index.mjs';
 
-const _runtimeConfig = {"app":{"baseURL":"/me","buildAssetsDir":"assets","cdnURL":""},"nitro":{"envPrefix":"NUXT_","routeRules":{"/__nuxt_error":{"cache":false}}},"public":{}};
+const _runtimeConfig = {"app":{"baseURL":"/i","buildAssetsDir":"assets","cdnURL":""},"nitro":{"envPrefix":"NUXT_","routeRules":{"/__nuxt_error":{"cache":false}}},"public":{}};
 const ENV_PREFIX = "NITRO_";
 const ENV_PREFIX_ALT = _runtimeConfig.nitro.envPrefix ?? process.env.NITRO_ENV_PREFIX ?? "_";
 const getEnv = (key) => {
